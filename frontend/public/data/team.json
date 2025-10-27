@@ -1,0 +1,90 @@
+{
+  "groups": [
+    {
+      "label": "2025",
+      "members": [
+        {
+          "name": "Aarav Singh",
+          "role": "Lead",
+          "session": "2025",
+          "avatar": "/placeholder.svg?height=160&width=160",
+          "linkedin": "https://www.linkedin.com/company/gdgmmmut/",
+          "github": "https://github.com/gdgmmmut"
+        },
+        {
+          "name": "Diya Patel",
+          "role": "Co-Lead",
+          "session": "2025",
+          "avatar": "/placeholder.svg?height=160&width=160",
+          "linkedin": "https://www.linkedin.com/company/gdgmmmut/",
+          "github": "https://github.com/gdgmmmut"
+        }
+      ]
+    },
+    {
+      "label": "2024",
+      "members": [
+        {
+          "name": "Rahul Verma",
+          "role": "Organizer",
+          "session": "2024",
+          "avatar": "/placeholder.svg?height=160&width=160",
+          "linkedin": "https://www.linkedin.com/company/gdgmmmut/",
+          "github": "https://github.com/gdgmmmut"
+        }
+      ]
+    },
+    {
+      "label": "2023",
+      "members": [
+        {
+          "name": "Neha Gupta",
+          "role": "Program Manager",
+          "session": "2023",
+          "avatar": "/placeholder.svg?height=160&width=160",
+          "linkedin": "https://www.linkedin.com/company/gdgmmmut/",
+          "github": "https://github.com/gdgmmmut"
+        }
+      ]
+    },
+    {
+      "label": "2022",
+      "members": [
+        {
+          "name": "Aditya Sharma",
+          "role": "Lead",
+          "session": "2022",
+          "avatar": "/placeholder.svg?height=160&width=160",
+          "linkedin": "https://www.linkedin.com/company/gdgmmmut/",
+          "github": "https://github.com/gdgmmmut"
+        }
+      ]
+    },
+    {
+      "label": "2021",
+      "members": [
+        {
+          "name": "Ishita Agarwal",
+          "role": "Organizer",
+          "session": "2021",
+          "avatar": "/placeholder.svg?height=160&width=160",
+          "linkedin": "https://www.linkedin.com/company/gdgmmmut/",
+          "github": "https://github.com/gdgmmmut"
+        }
+      ]
+    },
+    {
+      "label": "Alumni",
+      "members": [
+        {
+          "name": "Abhishek Kumar Yadav",
+          "role": "Founder",
+          "session": "Alumni",
+          "avatar": "/placeholder.svg?height=160&width=160",
+          "linkedin": "https://www.linkedin.com/company/gdgmmmut/",
+          "github": "https://github.com/gdgmmmut"
+        }
+      ]
+    }
+  ]
+}
