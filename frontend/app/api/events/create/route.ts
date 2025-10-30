@@ -2,6 +2,8 @@ import Event from "@/models/event.model";
 import { IEvent } from "@/types/types";
 import { NextRequest, NextResponse } from "next/server";
 
+// Creating Events
+// TODO: Provide access of this route to admin or super_admin only.
 export async function POST(request: NextRequest) {
   try {
     const eventFormData: IEvent = await request.json();
