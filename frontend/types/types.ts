@@ -10,8 +10,8 @@ export interface IUser extends Document {
   college: string;
   year: number;
   branch: string;
-  role: 'student' | 'admin' | 'event_manager' | 'super_admin';
-  oAuthProvider: 'email' | 'google' | 'github';
+  role: "student" | "admin" | "event_manager" | "super_admin";
+  oAuthProvider: "email" | "google" | "github";
   googleId: string;
   githubId: string;
   emailVerified: boolean;
@@ -33,10 +33,10 @@ export interface IUser extends Document {
         medium: number;
         hard: number;
         total: number;
-      },
+      };
       lastUpdated: Date;
       verified: boolean;
-    },
+    };
     codechef: {
       username: string;
       stars: number;
@@ -46,13 +46,20 @@ export interface IUser extends Document {
       highestRating: number;
       lastUpdated: Date;
       verified: boolean;
-    },
-  },
+    };
+  };
 }
 
 export interface IEvent {
   eventName: string;
-  eventType: 'Workshop' | 'Study Jam' | 'Hackathon' | 'Meetup' | 'Conference' | 'Webinar' | 'Tech Fest';
+  eventType:
+    | "Workshop"
+    | "Study Jam"
+    | "Hackathon"
+    | "Meetup"
+    | "Conference"
+    | "Webinar"
+    | "Tech Fest";
   description: string;
   eventImage: string;
   location: string;
@@ -65,6 +72,6 @@ export interface IEvent {
   registeraionOpen: boolean;
   registrationDeadline: Date;
   tags: [string];
-  eventCategory: 'general' | 'study-jam' | 'immerse' | 'hackblitz';
-  parentEvent: string;
+  eventCategory: "general" | "study-jam" | "immerse" | "hackblitz";
+  parentEvent: string | null;
 }
