@@ -4,7 +4,7 @@ import type React from "react"
 
 import Link from "next/link"
 import { useState } from "react"
-import { Mail, Lock, Sun, Github, LogIn } from "lucide-react"
+import { Mail, Lock, Sun, Github, LogIn, Linkedin } from "lucide-react"
 import { RippleButton } from "@/components/ui/ripple-button"
 import { useAuth } from "@/lib/auth-context"
 import { useRouter } from "next/navigation"
@@ -59,6 +59,21 @@ export default function SignInPage() {
     }
     console.log("[v0] Google sign in:", mockGoogleUser)
     login(mockGoogleUser)
+    setTimeout(() => {
+      router.push("/")
+    }, 100)
+  }
+
+  const handleLinkedInSignIn = () => {
+    const mockLinkedInUser = {
+      id: "linkedin_" + Math.random().toString(),
+      name: "LinkedIn User",
+      email: "user@linkedin.com",
+      provider: "github" as const,
+      avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=linkedin",
+    }
+    console.log("[v0] LinkedIn sign in:", mockLinkedInUser)
+    login(mockLinkedInUser)
     setTimeout(() => {
       router.push("/")
     }, 100)
@@ -154,6 +169,14 @@ export default function SignInPage() {
               className="size-10 border border-(--g-green) hover:shadow-[0_0_0_3px_color-mix(in_oklab,var(--g-green)_40%,transparent)] transition grid place-items-center"
             >
               <Github className="size-5 text-(--g-green)" />
+            </button>
+            <button
+              type="button"
+              onClick={handleLinkedInSignIn}
+              aria-label="Continue with LinkedIn"
+              className="size-10 border border-(--g-red) hover:shadow-[0_0_0_3px_color-mix(in_oklab,var(--g-red)_40%,transparent)] transition grid place-items-center"
+            >
+              <Linkedin className="size-5 text-(--g-red)" />
             </button>
           </div>
 

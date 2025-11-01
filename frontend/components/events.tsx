@@ -14,6 +14,9 @@ type Event = {
   participants: number
   img: string
   desc: string
+  date: string
+  images: string[]
+  isUpcoming?: boolean
 }
 
 const DATA: Event[] = [
@@ -23,8 +26,16 @@ const DATA: Event[] = [
     kind: "Meetups",
     venue: "Auditorium",
     participants: 450,
-    img: "/orientation-2025.jpg",
-    desc: "Kick off the academic year with a deep dive into GDG culture, programs, tracks, and how to build your roadmap. Meet the team, discover working groups, and join your first build challenge.",
+    img: "https://ik.imagekit.io/guxtd3sah/IMG_0710.HEIC?updatedAt=1754648851818",
+    date: "January 15, 2025",
+    isUpcoming: true,
+    images: [
+      "https://ik.imagekit.io/guxtd3sah/IMG_0710.HEIC?updatedAt=1754648851818",
+      "https://ik.imagekit.io/vkajf4kza/IMG_0376.JPG?updatedAt=1754639902883",
+      "https://ik.imagekit.io/vkajf4kza/DSC_0238%20(1)_2.jpg?updatedAt=1754639916150",
+      "https://ik.imagekit.io/vkajf4kza/DSC_0190.JPG?updatedAt=1754639915604",
+    ],
+    desc: "Kick off the academic year with a deep dive into GDG culture, programs, tracks, and how to build your roadmap. Meet the team, discover working groups, and join your first build challenge. This orientation session is designed to introduce new members to the Google Developer Group community, showcase our mission of fostering innovation and collaboration, and help you find your place within our diverse technical tracks. Whether you're interested in web development, mobile apps, AI/ML, or cloud technologies, we have something for everyone. Network with fellow developers, learn about upcoming events and hackathons, and get inspired to build amazing projects.",
   },
   {
     id: "hackblitz",
@@ -32,8 +43,15 @@ const DATA: Event[] = [
     kind: "Hackathons",
     venue: "Main Hall",
     participants: 200,
-    img: "/hackblitz.jpg",
-    desc: "A 24-hour product sprint focused on shipping MVPs. Mentors from industry guide teams through scoping, rapid prototyping, and demo day storytelling.",
+    img: "https://ik.imagekit.io/vkajf4kza/IMG_0376.JPG?updatedAt=1754639902883",
+    date: "February 20, 2025",
+    images: [
+      "https://ik.imagekit.io/vkajf4kza/IMG_0376.JPG?updatedAt=1754639902883",
+      "https://ik.imagekit.io/vkajf4kza/DSC_0238%20(1)_2.jpg?updatedAt=1754639916150",
+      "https://ik.imagekit.io/vkajf4kza/DSC_0190.JPG?updatedAt=1754639915604",
+      "https://ik.imagekit.io/vkajf4kza/DSC_0271_1.jpg?updatedAt=1754639914878",
+    ],
+    desc: "A 24-hour product sprint focused on shipping MVPs. Mentors from industry guide teams through scoping, rapid prototyping, and demo day storytelling. HackBlitz is our flagship hackathon where innovation meets execution. Teams compete to build functional prototypes in just 24 hours, with mentorship from experienced developers and industry professionals. Prizes, swag, and recognition await the top teams. Whether you're a seasoned hacker or building your first project, HackBlitz provides the perfect platform to showcase your skills, collaborate with talented peers, and potentially launch your next big idea.",
   },
   {
     id: "web-ws",
@@ -41,8 +59,15 @@ const DATA: Event[] = [
     kind: "Workshops",
     venue: "Lab 3",
     participants: 120,
-    img: "/web-workshop.jpg",
-    desc: "Modern web fundamentals: Next.js App Router, Tailwind v4, accessibility, performance budgets, and production deployment workflows.",
+    img: "https://ik.imagekit.io/vkajf4kza/DSC_0238%20(1)_2.jpg?updatedAt=1754639916150",
+    date: "March 10, 2025",
+    images: [
+      "https://ik.imagekit.io/vkajf4kza/DSC_0238%20(1)_2.jpg?updatedAt=1754639916150",
+      "https://ik.imagekit.io/vkajf4kza/DSC_0190.JPG?updatedAt=1754639915604",
+      "https://ik.imagekit.io/vkajf4kza/DSC_0271_1.jpg?updatedAt=1754639914878",
+      "https://ik.imagekit.io/guxtd3sah/IMG_0710.HEIC?updatedAt=1754648851818",
+    ],
+    desc: "Modern web fundamentals: Next.js App Router, Tailwind v4, accessibility, performance budgets, and production deployment workflows. Learn from industry experts how to build scalable, performant web applications using the latest technologies. This hands-on workshop covers everything from setting up your development environment to deploying production-ready applications. You'll learn best practices for responsive design, SEO optimization, and accessibility standards. Perfect for developers looking to level up their web development skills and stay current with modern frameworks and tools.",
   },
   {
     id: "ml-webinar",
@@ -51,8 +76,15 @@ const DATA: Event[] = [
     venue: "Online",
     participants: 300,
     online: true,
-    img: "/ml-webinar.jpg",
-    desc: "A fast-paced session on applied ML—data pipelines, baseline modeling, and model monitoring with real case studies.",
+    img: "https://ik.imagekit.io/vkajf4kza/DSC_0190.JPG?updatedAt=1754639915604",
+    date: "April 5, 2025",
+    images: [
+      "https://ik.imagekit.io/vkajf4kza/DSC_0190.JPG?updatedAt=1754639915604",
+      "https://ik.imagekit.io/vkajf4kza/DSC_0271_1.jpg?updatedAt=1754639914878",
+      "https://ik.imagekit.io/guxtd3sah/IMG_0710.HEIC?updatedAt=1754648851818",
+      "https://ik.imagekit.io/vkajf4kza/IMG_0376.JPG?updatedAt=1754639902883",
+    ],
+    desc: "A fast-paced session on applied ML—data pipelines, baseline modeling, and model monitoring with real case studies. Discover how machine learning is transforming industries and learn practical techniques for building ML systems. This webinar covers the entire ML lifecycle from data collection and preprocessing to model training, evaluation, and deployment. Industry practitioners will share real-world case studies and lessons learned. Ideal for developers interested in AI/ML who want to understand how to integrate machine learning into their applications.",
   },
   {
     id: "app-dev",
@@ -60,8 +92,15 @@ const DATA: Event[] = [
     kind: "Workshops",
     venue: "Lab 5",
     participants: 110,
-    img: "/app-dev.jpg",
-    desc: "End-to-end Android app development with Kotlin and Jetpack: UI architecture, offline-first data, and publishing best practices.",
+    img: "https://ik.imagekit.io/vkajf4kza/DSC_0271_1.jpg?updatedAt=1754639914878",
+    date: "May 12, 2025",
+    images: [
+      "https://ik.imagekit.io/vkajf4kza/DSC_0271_1.jpg?updatedAt=1754639914878",
+      "https://ik.imagekit.io/guxtd3sah/IMG_0710.HEIC?updatedAt=1754648851818",
+      "https://ik.imagekit.io/vkajf4kza/IMG_0376.JPG?updatedAt=1754639902883",
+      "https://ik.imagekit.io/vkajf4kza/DSC_0238%20(1)_2.jpg?updatedAt=1754639916150",
+    ],
+    desc: "End-to-end Android app development with Kotlin and Jetpack: UI architecture, offline-first data, and publishing best practices. Build production-ready Android applications using modern development practices. This workshop covers the complete app development lifecycle including UI design patterns, data persistence, networking, and app store publishing. Learn from experienced Android developers about common pitfalls and best practices. Whether you're new to Android development or looking to improve your skills, this workshop provides hands-on experience with real-world scenarios.",
   },
   {
     id: "native-nexus",
@@ -69,8 +108,15 @@ const DATA: Event[] = [
     kind: "Meetups",
     venue: "Innovation Center",
     participants: 160,
-    img: "/native-nexus.jpg",
-    desc: "A meetup on native experiences—Flutter, Compose, and performance profiling on mobile.",
+    img: "https://ik.imagekit.io/guxtd3sah/IMG_0710.HEIC?updatedAt=1754648851818",
+    date: "June 8, 2025",
+    images: [
+      "https://ik.imagekit.io/guxtd3sah/IMG_0710.HEIC?updatedAt=1754648851818",
+      "https://ik.imagekit.io/vkajf4kza/IMG_0376.JPG?updatedAt=1754639902883",
+      "https://ik.imagekit.io/vkajf4kza/DSC_0238%20(1)_2.jpg?updatedAt=1754639916150",
+      "https://ik.imagekit.io/vkajf4kza/DSC_0190.JPG?updatedAt=1754639915604",
+    ],
+    desc: "A meetup on native experiences—Flutter, Compose, and performance profiling on mobile. Connect with fellow mobile developers and explore the latest in cross-platform and native mobile development. This meetup brings together developers passionate about building beautiful, performant mobile applications. Discuss best practices, share experiences, and learn about emerging technologies in the mobile development space. Network with industry professionals and discover new opportunities in mobile development.",
   },
 ]
 
@@ -120,7 +166,12 @@ export function Events() {
 
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {events.map((ev) => (
-          <article key={ev.id} className="g-gradient-border bg-[canvas] overflow-hidden group" data-tilt>
+          <article key={ev.id} className="g-gradient-border bg-[canvas] overflow-hidden group relative" data-tilt>
+            {ev.isUpcoming && (
+              <div className="absolute top-2 right-2 z-10 bg-(--g-green) text-white px-3 py-1 text-xs font-bold">
+                UPCOMING
+              </div>
+            )}
             <div className="relative h-44">
               <Image alt={ev.title} src={ev.img || "/placeholder.svg"} fill className="object-cover" />
             </div>
@@ -146,20 +197,35 @@ export function Events() {
         ))}
       </div>
 
-      {/* modal for selected event */}
       {active && (
         <div className="fixed inset-0 z-50 grid place-items-center">
           <div className="absolute inset-0 bg-black/50" onClick={() => setActive(null)} />
-          <div className="relative g-gradient-border bg-(--color-card) max-w-lg w-[92%] p-5">
+          <div className="relative g-gradient-border bg-(--color-card) max-w-2xl w-[92%] max-h-[90vh] overflow-y-auto p-6">
             <button
-              className="absolute top-2 right-2 h-8 w-8 grid place-items-center g-gradient-border bg-[canvas]"
+              className="absolute top-4 right-4 h-8 w-8 grid place-items-center g-gradient-border bg-[canvas]"
               onClick={() => setActive(null)}
               aria-label="Close"
             >
               <X className="size-4" />
             </button>
-            <h4 className="text-xl font-bold mb-2">{active.title}</h4>
-            <p className="text-sm opacity-90">{active.desc}</p>
+
+            <h2 className="text-2xl font-bold mb-2">{active.title}</h2>
+            <p className="text-sm opacity-80 mb-4">{active.date}</p>
+
+            <div className="grid grid-cols-2 gap-3 mb-6">
+              {active.images.map((img, idx) => (
+                <div key={idx} className="relative h-40 overflow-hidden">
+                  <Image
+                    src={img || "/placeholder.svg"}
+                    alt={`${active.title} - Image ${idx + 1}`}
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+              ))}
+            </div>
+
+            <p className="text-sm leading-relaxed opacity-90">{active.desc}</p>
           </div>
         </div>
       )}
