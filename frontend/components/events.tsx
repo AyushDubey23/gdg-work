@@ -133,7 +133,9 @@ export function Events() {
       <header className="mb-6 flex items-center justify-between">
         <h2 className="text-2xl md:text-3xl font-extrabold">Events</h2>
         <Dialog>
-          <DialogTrigger className="g-gradient-border bg-[canvas] h-9 px-3 text-sm">Read More</DialogTrigger>
+          <DialogTrigger className="g-gradient-border bg-[canvas] h-9 px-4 text-sm font-medium hover:bg-[color-mix(in_oklab,var(--g-blue)_6%,transparent)] transition-colors">
+            Read More
+          </DialogTrigger>
           <DialogContent className="g-gradient-border bg-[canvas] max-w-2xl">
             <DialogHeader>
               <DialogTitle>Our event formats</DialogTitle>
@@ -157,7 +159,7 @@ export function Events() {
           <button
             key={f}
             onClick={() => setFilter(f)}
-            className={`g-gradient-border bg-[canvas] px-4 py-2 ${filter === f ? "outline outline-2 outline-(--g-blue)" : ""}`}
+            className={`g-gradient-border bg-[canvas] px-4 py-2 font-medium hover:bg-[color-mix(in_oklab,var(--g-blue)_6%,transparent)] transition-colors ${filter === f ? "outline outline-2 outline-(--g-blue)" : ""}`}
           >
             {f}
           </button>
@@ -187,7 +189,7 @@ export function Events() {
               </div>
               <button
                 onClick={() => setActive(ev)}
-                className="inline-flex items-center gap-2 text-(--g-green) hover:underline"
+                className="g-gradient-border bg-[canvas] px-3 py-2 text-sm font-medium inline-flex items-center gap-2 hover:bg-[color-mix(in_oklab,var(--g-blue)_6%,transparent)] transition-colors"
                 data-cursor="interactive"
               >
                 Know More <ExternalLink className="size-4" />
@@ -198,11 +200,11 @@ export function Events() {
       </div>
 
       {active && (
-        <div className="fixed inset-0 z-50 grid place-items-center">
+        <div className="fixed inset-0 z-50 grid place-items-center p-4">
           <div className="absolute inset-0 bg-black/50" onClick={() => setActive(null)} />
-          <div className="relative g-gradient-border bg-(--color-card) max-w-2xl w-[92%] max-h-[90vh] overflow-y-auto p-6">
+          <div className="relative g-gradient-border bg-(--color-card) max-w-2xl w-full max-h-[90vh] overflow-y-auto p-6 sm:p-8">
             <button
-              className="absolute top-4 right-4 h-8 w-8 grid place-items-center g-gradient-border bg-[canvas]"
+              className="absolute top-4 right-4 h-8 w-8 grid place-items-center g-gradient-border bg-[canvas] hover:bg-[color-mix(in_oklab,var(--g-blue)_6%,transparent)] transition-colors"
               onClick={() => setActive(null)}
               aria-label="Close"
             >
@@ -210,11 +212,11 @@ export function Events() {
             </button>
 
             <h2 className="text-2xl font-bold mb-2">{active.title}</h2>
-            <p className="text-sm opacity-80 mb-4">{active.date}</p>
+            <p className="text-sm opacity-80 mb-6">{active.date}</p>
 
             <div className="grid grid-cols-2 gap-3 mb-6">
               {active.images.map((img, idx) => (
-                <div key={idx} className="relative h-40 overflow-hidden">
+                <div key={idx} className="relative h-40 overflow-hidden g-gradient-border">
                   <Image
                     src={img || "/placeholder.svg"}
                     alt={`${active.title} - Image ${idx + 1}`}

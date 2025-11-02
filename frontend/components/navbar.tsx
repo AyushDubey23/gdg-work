@@ -86,13 +86,13 @@ export function Navbar() {
           onClick={() => setOpen(false)}
         />
         <aside
-          className={`absolute right-0 top-0 h-full w-80 max-w-[88%] bg-(--color-card) border-l border-(--color-border)
-                      shadow-2xl p-6 transition-transform duration-300 ease-out flex flex-col ${open ? "translate-x-0" : "translate-x-full"}`}
+          className={`absolute right-0 top-0 h-screen w-80 max-w-[88%] bg-(--color-card) border-l border-(--color-border)
+                      shadow-2xl p-6 transition-transform duration-300 ease-out flex flex-col overflow-y-auto ${open ? "translate-x-0" : "translate-x-full"}`}
         >
           <div className="flex items-center justify-between mb-6">
             <span className="font-extrabold">Menu</span>
             <button
-              className="size-10 grid place-items-center bg-[canvas] border border-(--color-border)"
+              className="size-10 grid place-items-center bg-[canvas] border border-(--color-border) hover:bg-[color-mix(in_oklab,var(--g-blue)_6%,transparent)] transition-colors"
               onClick={() => setOpen(false)}
               aria-label="Close menu"
             >
@@ -105,7 +105,7 @@ export function Navbar() {
                 key={item.href}
                 href={item.href}
                 onClick={() => setOpen(false)}
-                className="text-base py-3 px-2 border-b border-(--color-border) hover:bg-[color-mix(in_oklab,var(--g-blue)_6%,transparent)] transition-colors"
+                className="text-base py-4 px-3 border-b border-(--color-border) hover:bg-[color-mix(in_oklab,var(--g-blue)_6%,transparent)] transition-colors font-medium"
               >
                 {item.label}
               </Link>
@@ -113,16 +113,16 @@ export function Navbar() {
             {!isLoading && (
               <>
                 {user ? (
-                  <div className="py-3 px-2 border-b border-(--color-border) flex items-center gap-2">
+                  <div className="py-4 px-3 border-b border-(--color-border) flex items-center gap-3">
                     <Image
                       src={user.avatar || "/placeholder.svg"}
                       alt={user.name}
-                      width={32}
-                      height={32}
+                      width={40}
+                      height={40}
                       className="rounded-full"
                     />
                     <div>
-                      <p className="text-sm font-medium">{user.name}</p>
+                      <p className="text-sm font-semibold">{user.name}</p>
                       <p className="text-xs opacity-70">{user.email}</p>
                     </div>
                   </div>
@@ -130,7 +130,7 @@ export function Navbar() {
                   <Link
                     href="/sign-in"
                     onClick={() => setOpen(false)}
-                    className="text-base py-3 px-2 border-b border-(--color-border) hover:bg-[color-mix(in_oklab,var(--g-blue)_6%,transparent)] transition-colors font-semibold"
+                    className="text-base py-4 px-3 border-b border-(--color-border) hover:bg-[color-mix(in_oklab,var(--g-blue)_6%,transparent)] transition-colors font-semibold"
                   >
                     Sign In/Sign Up
                   </Link>

@@ -2,6 +2,7 @@
 
 import { Cpu, Shield, Cloud, Smartphone, Laptop, Code, Database, Palette } from "lucide-react"
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog"
+import Image from "next/image"
 
 const domains = [
   { icon: Laptop, label: "Web Development" },
@@ -22,6 +23,14 @@ const stats = [
   { label: "Hackathons", value: "2+" },
 ]
 
+const paragraphs = [
+  "Founded on 26th September 2020 by our esteemed alumnus Abhishek Kumar Yadav, our journey began as Developer Student Clubs (DSC) under the prestigious Google Developers Program. What started as a small initiative to bring together enthusiastic learners and innovators has, over time, grown into something much larger and impactful.",
+  "Through consistent effort, dedication, and the passion of our members, we have developed, expanded, and evolved into the largest developer community on our campus and one of the most vibrant in the entire region. Our growth is not merely in numbers but in the diversity of skills, creativity, and opportunities that we bring to the table.",
+  "From the very beginning, our mission has remained clear and unwavering—to promote technology, foster innovation, and nurture skill development within the tech community. We believe in empowering students to transform their ideas into reality, equipping them with the tools and mindset needed to solve real-world challenges.",
+  "Over the years, we have hosted a wide array of impactful initiatives, including hands-on workshops, hackathons, coding competitions, speaker sessions, and expert-led seminars. These not only provide valuable technical knowledge but also cultivate teamwork, problem-solving abilities, and leadership skills among participants.",
+  "Today, our community stands as a hub of collaboration, creativity, and technical excellence, inspiring countless students to explore new technologies, push their boundaries, and become future leaders in the tech ecosystem.",
+]
+
 export function About() {
   return (
     <section id="about" className="mx-auto max-w-7xl px-4 py-16 md:py-24 grid lg:grid-cols-2 gap-10 items-start">
@@ -31,41 +40,25 @@ export function About() {
           <div className="flex items-center justify-between">
             <h2 className="text-2xl font-extrabold mb-2">Our Journey</h2>
             <Dialog>
-              <DialogTrigger className="g-gradient-border bg-[canvas] h-9 px-3 text-sm">Read More</DialogTrigger>
+              <DialogTrigger className="g-gradient-border bg-[canvas] h-9 px-4 text-sm font-medium hover:bg-[color-mix(in_oklab,var(--g-blue)_6%,transparent)] transition-colors">
+                Read More
+              </DialogTrigger>
               <DialogContent className="g-gradient-border bg-[canvas] max-w-2xl max-h-[80vh] overflow-y-auto">
                 <DialogHeader>
                   <DialogTitle>Our Journey</DialogTitle>
                 </DialogHeader>
+                <div className="relative h-48 mb-4 g-gradient-border overflow-hidden">
+                  <Image
+                    src="https://ik.imagekit.io/guxtd3sah/IMG_0710.HEIC?updatedAt=1754648851818"
+                    alt="GDG Community"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
                 <div className="text-sm space-y-3">
-                  <p>
-                    Founded on 26th September 2020 by our esteemed alumnus Abhishek Kumar Yadav, our journey began as
-                    Developer Student Clubs (DSC) under the prestigious Google Developers Program. What started as a
-                    small initiative to bring together enthusiastic learners and innovators has, over time, grown into
-                    something much larger and impactful.
-                  </p>
-                  <p>
-                    Through consistent effort, dedication, and the passion of our members, we have developed, expanded,
-                    and evolved into the largest developer community on our campus and one of the most vibrant in the
-                    entire region. Our growth is not merely in numbers but in the diversity of skills, creativity, and
-                    opportunities that we bring to the table.
-                  </p>
-                  <p>
-                    From the very beginning, our mission has remained clear and unwavering—to promote technology, foster
-                    innovation, and nurture skill development within the tech community. We believe in empowering
-                    students to transform their ideas into reality, equipping them with the tools and mindset needed to
-                    solve real-world challenges.
-                  </p>
-                  <p>
-                    Over the years, we have hosted a wide array of impactful initiatives, including hands-on workshops,
-                    hackathons, coding competitions, speaker sessions, and expert-led seminars. These not only provide
-                    valuable technical knowledge but also cultivate teamwork, problem-solving abilities, and leadership
-                    skills among participants.
-                  </p>
-                  <p>
-                    Today, our community stands as a hub of collaboration, creativity, and technical excellence,
-                    inspiring countless students to explore new technologies, push their boundaries, and become future
-                    leaders in the tech ecosystem.
-                  </p>
+                  {paragraphs.map((para, idx) => (
+                    <p key={idx}>{para}</p>
+                  ))}
                 </div>
               </DialogContent>
             </Dialog>
