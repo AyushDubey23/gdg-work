@@ -4,7 +4,6 @@ import Link from "next/link"
 import { useState } from "react"
 import { Menu, X } from "lucide-react"
 import Image from "next/image"
-import { ThemeToggle } from "./theme-toggle"
 import { useAuth } from "@/lib/auth-context"
 
 const navItems = [
@@ -21,7 +20,7 @@ export function Navbar() {
   const { user, isLoading } = useAuth()
 
   return (
-    <header className="sticky top-0 z-40 backdrop-blur-xl bg-[color-mix(in_oklab,var(--color-background)_75%,transparent)] border-b border-(--color-border)">
+    <header className="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl bg-[color-mix(in_oklab,var(--color-background)_75%,transparent)] border-b border-(--color-border)">
       <div className="mx-auto max-w-7xl px-4 py-3 flex items-center justify-between">
         <Link href="#home" className="flex items-center gap-3 group" aria-label="GDG On Campus MMMUT">
           <div className="relative h-7 w-7">
@@ -41,7 +40,6 @@ export function Navbar() {
             </Link>
           ))}
           <div className="flex items-center gap-3">
-            <ThemeToggle />
             {!isLoading && (
               <>
                 {user ? (
@@ -138,10 +136,6 @@ export function Navbar() {
               </>
             )}
           </nav>
-          <div className="pt-4 border-t border-(--color-border) flex items-center justify-between">
-            <span className="text-sm opacity-70">Theme</span>
-            <ThemeToggle />
-          </div>
         </aside>
       </div>
     </header>

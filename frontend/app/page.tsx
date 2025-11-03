@@ -14,18 +14,20 @@ import { Footer } from "@/components/footer"
 
 export default function HomePage() {
   return (
-    <main className="min-h-dvh bg-(--color-background) text-(--color-foreground)">
+    <>
       <Navbar />
-      <Hero />
-      <About />
-      <CountdownSection />
-      <Events />
-      <Team />
-      <Sponsors />
-      <Certificates />
-      <Contact />
-      <SocialMedia />
-      <Footer />
-    </main>
+      <main className="min-h-dvh bg-(--color-background) text-(--color-foreground) pt-16">
+        <Hero />
+        <About />
+        <CountdownSection />
+        <Events />
+        <Team />
+        <Sponsors />
+        <Certificates />
+        <Contact />
+        <SocialMedia />
+        <Footer />
+      </main>
+    </>
   )
 }
